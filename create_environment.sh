@@ -20,9 +20,21 @@ elif [[ ${#usr_name} -gt 20 ]]; then
 elif [[ ! "$usr_name" =~ ^[a-zA-Z_]+$ ]]; then
 	echo " Username must be in alphabet or underscore format only"
 else 
-	echo "Directory created succesfuly with the user input"
+	echo "Great! directory created succesfuly with the user input"
 	break
 fi
 done
+
+#Creating the directory, subdirectories and files
+# 1. Creating theparent directory 
+mkdir -p submission_reminder_"$usr_name"
+
+# 2. Creating subdirectroies 
+mkdir -p submission_reminder_"$usr_name"/app
+mkdir -p submission_reminder_"$usr_name"/modules
+mkdir -p submission_reminder_"$usr_name"/assets
+mkdir -p submission_reminder_"$usr_name"/config
+
+
 
 
