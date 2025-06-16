@@ -26,7 +26,7 @@ fi
 done
 
 #Creating the directory, subdirectories and files
-# 1. Creating theparent directory 
+# 1. Creating the parent directory 
 mkdir -p submission_reminder_"$usr_name"
 
 # 2. Creating subdirectroies 
@@ -35,6 +35,10 @@ mkdir -p submission_reminder_"$usr_name"/modules
 mkdir -p submission_reminder_"$usr_name"/assets
 mkdir -p submission_reminder_"$usr_name"/config
 
-
-
+# 3. Creating the files 
+touch submission_reminder_"$usr_name"/app/reminder.sh
+touch submission_reminder_"$usr_name"/modules/functions.sh
+touch submission_reminder_"$usr_name"/assets/submissions.txt
+touch submission_reminder_"$usr_name"/config/config.env
+touch submission_reminder_"$usr_name"/startup.sh
 
