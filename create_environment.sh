@@ -61,10 +61,10 @@ echo "--------------------------------------------"
 
 check_submissions $submissions_file
 EOF 
-chmod +x submission_reminder_"$usr_name"/app/reminder.sh 
+#chmod +x submission_reminder_"$usr_name"/app/reminder.sh 
 
 # The functions file 
-cat << 'EOF' > "submission_reminder_"$usr_name"/modules/function.sh"
+cat << 'EOF' > "submission_reminder_"$usr_name"/modules/functions.sh"
 #!/bin/bash
 
 # Function to read submissions file and output students who have not submitted
@@ -86,10 +86,10 @@ function check_submissions {
     done < <(tail -n +2 "$submissions_file") # Skip the header
 }
 EOF
-chmod +x submission_reminder_"$usr_name"/modules/functions.sh
+
 
 # The submissions file 
-cat << 'EOF' > "submission_reminder_"$usr_name"/assets/submission.txt"
+cat << 'EOF' > "submission_reminder_"$usr_name"/assets/submissions.txt"
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
@@ -108,11 +108,13 @@ cat << 'EOF' > "submission_reminder_"$usr_name"/config/config.env"
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
-EOF 
+EOF
 
 # The startup file 
 cat << 'EOF' > "submission_reminder_"$usr_name"/startup.sh"
 #!/bin/bash
 ./app/reminder.sh
 EOF
-chmod +x submission_reminder_"$usr_name"/startup.sh
+
+# Adding permissions to all the files ending with .sh 
+find . -type f -name "*.sh" -exec chmod +x {} \;
