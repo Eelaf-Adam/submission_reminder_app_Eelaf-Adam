@@ -1,0 +1,11 @@
+student, assignment, submission status
+Chinemerem, Shell Navigation, not submitted
+Chiagoziem, Git, submitted
+Divine, Shell Navigation, not submitted
+Anissa, Shell Basics, submitted
+Lee, HTML & CSS, in proress
+Mona, Shell Scripting, submitted
+Hamid, Linux Basic Commands, not submitted
+Ben, Python, in progress
+Lina, JavaScript, submitted
+Ahmed, C Programming, not submitted
