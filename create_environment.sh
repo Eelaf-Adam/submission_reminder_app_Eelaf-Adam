@@ -7,22 +7,25 @@ echo "Discription:This script will create the submission rmeinder app directory"
 echo "setting up environment..."
 echo "============================"
 
+# Adding file permisions
+chmod +x create_environment.sh
+
 # Prompting the user to enter their name
 while true; do
-read -p "Enter Your name here:" usr_name 
+    read -p "Enter Your name here:" usr_name 
 
-if  [[ -z "$usr_name" ]]; then 
-	echo "Erorr: Username cannot be empty"
-elif [[ ${#usr_name} -lt 3 ]]; then 
-	echo "Erorr: Minimum character allowed is 3"
-elif [[ ${#usr_name} -gt 20 ]]; then
-	echo "Erorr: Maximum charcter allowed is 20"
-elif [[ ! "$usr_name" =~ ^[a-zA-Z_]+$ ]]; then
-	echo " Username must be in alphabet or underscore format only"
-else 
-	echo "Great! directory created succesfuly with the user input"
-	break
-fi
+    if  [[ -z "$usr_name" ]]; then 
+        echo "Erorr: Username cannot be empty"
+    elif [[ ${#usr_name} -lt 3 ]]; then 
+        echo "Erorr: Minimum character allowed is 3"
+    elif [[ ${#usr_name} -gt 20 ]]; then
+        echo "Erorr: Maximum charcter allowed is 20"
+    elif [[ ! "$usr_name" =~ ^[a-zA-Z_]+$ ]]; then
+        echo " Username must be in alphabet or underscore format only"
+    else 
+        echo "Great! directory created succesfuly with the user input"
+        break
+    fi
 done
 
 #Creating the directory, subdirectories and files
@@ -71,6 +74,7 @@ cat << 'EOF' > "submission_reminder_"$usr_name"/modules/functions.sh"
 function check_submissions {
     local submissions_file=$1
     echo "Checking submissions in $submissions_file"
+    count=0
 
     # Skip the header and iterate through the lines
     while IFS=, read -r student assignment status; do
@@ -82,8 +86,13 @@ function check_submissions {
         # Check if assignment matches and status is 'not submitted'
         if [[ "$assignment" == "$ASSIGNMENT" && "$status" == "not submitted" ]]; then
             echo "Reminder: $student has not submitted the $ASSIGNMENT assignment!"
+            ((count++))
         fi
+        
     done < <(tail -n +2 "$submissions_file") # Skip the header
+    if [[ "$count" -eq 0 ]]; then
+        echo "All students have submitted the $ASSIGNMENT assignment."
+    fi
 }
 EOF
 
@@ -120,3 +129,4 @@ EOF
 
 # Adding permissions to all the files ending with .sh 
 find . -type f -name "*.sh" -exec chmod +x {} \;
+
