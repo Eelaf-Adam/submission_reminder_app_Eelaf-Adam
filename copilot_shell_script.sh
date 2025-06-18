@@ -7,7 +7,7 @@ echo "Discription:This script file will allow the user to enter an assignment na
 echo "Checking your submission..."
 echo "============================"
 
-# The path to the submission reminder directory
+# The path to the submission reminder directorynn
 path_to_directory=$(ls -d submission_reminder_* 2>/dev/null | head -1)
 
 # Adding file permisions
