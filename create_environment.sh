@@ -60,8 +60,8 @@ echo "Days remaining to submit: $DAYS_REMAINING days"
 echo "--------------------------------------------"
 
 check_submissions $submissions_file
-EOF 
-#chmod +x submission_reminder_"$usr_name"/app/reminder.sh 
+EOF
+ 
 
 # The functions file 
 cat << 'EOF' > "submission_reminder_"$usr_name"/modules/functions.sh"
@@ -89,7 +89,7 @@ EOF
 
 
 # The submissions file 
-cat << 'EOF' > "submission_reminder_"$usr_name"/assets/submissions.txt"
+cat << EOF > "submission_reminder_"$usr_name"/assets/submissions.txt"
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
@@ -104,7 +104,7 @@ Ahmed, C Programming, not submitted
 EOF
 
 # The config file
-cat << 'EOF' > "submission_reminder_"$usr_name"/config/config.env"
+cat << EOF > "submission_reminder_"$usr_name"/config/config.env"
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
@@ -113,6 +113,8 @@ EOF
 # The startup file 
 cat << 'EOF' > "submission_reminder_"$usr_name"/startup.sh"
 #!/bin/bash
+path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$path"
 ./app/reminder.sh
 EOF
 
