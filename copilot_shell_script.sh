@@ -23,8 +23,5 @@ echo "Upating assignment name"
 # Replace the value with the inut of the assignment 
 sed -i "2s/^ASSIGNMENT=.*/ASSIGNMENT=\"$aissgn_name\"/" "$path_to_directory/config/config.env"
 
-# Prompt the username 
-read -p "Enter your username:" usr_name
-
 # Running the startup file
 ./$path_to_directory/startup.sh
