@@ -40,6 +40,21 @@ cd submission_reminder_app_Eelaf-Adam
 ```sh
 ./create_environment.sh
 ```
+  - After running the script you will be prompted to eneter your user name.
+  - It will create the directory with your user name.
+  - The script will create all the necessray subdirectories and their files, with the following sctructure:
+```sh
+submission_reminder_{username}/
+├── app/
+│   └── reminder.sh
+├── modules/
+│   └── functions.sh
+├── assets/
+│   └── submissions.txt
+├── config/
+│   └── config.env
+└── startup.sh
+```
 
 4. Run the copilot
 ```sh
