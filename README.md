@@ -2,7 +2,7 @@
 
 ## 🔔⏰Submission Reminder Application for Student
 
-### A. App Overview
+### 🔍 App Overview
 ### Stay on Track with your Deadlines
 A simple reminder app that alret students about upcoming assignments deadlines.
 
@@ -67,7 +67,8 @@ submission_reminder_{username}/
 
 ### Watch the video below, which demonstrates how to use the app.
 
-## 👩🏽‍💻 Author [**Eelaf Adam**](https://github.com/Eelaf-Adam)
+## 🌐Author
+- 👩🏽‍💻[**Eelaf Adam**](https://github.com/Eelaf-Adam)
 
 
 ## 📑License
