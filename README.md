@@ -5,7 +5,6 @@
 ### A. App Overview
 ### Stay on Track with your Deadlines
 A simple reminder app that alret students about upcoming assignments deadlines.
-
 <br></br>
 
 ## 🗽Project Status: Completed
@@ -20,7 +19,6 @@ complete development of the project has been acheived with the follwing componen
   e. startup.sh:
 
 2. A copilot shell script that allows the user the change the assignment name and check it's status, it also start the startup.sh file.
-
 <br></br>
 
 ## 🛠️App Setup and Installion
@@ -60,4 +58,18 @@ submission_reminder_{username}/
 ```sh
 ./copilot_shell_script.sh
 ```
+ - You will be promted to enter the name of the assignment you want to check.
+ - Then the script will show you the status of the assignment your added.
+ - Lastly it will run the starup script.
+<br></br>
+
+## 🔥Demo and 🚀Usage
+
+### Watch the video below, which demonstrates how to use the app.
+
+## 👩🏽‍💻 Author [**Eelaf Adam**](https://github.com/Eelaf-Adam)
+<br></br>
+
+## 📑License
+copyright @ 2025 [**Eelaf Adam**](https://github.com/Eelaf-Adam)
 
