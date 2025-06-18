@@ -23,5 +23,26 @@ complete development of the project has been acheived with the follwing componen
 
 <br></br>
 
+## 🛠️App Setup and Installion
+Follow the follwing steps to setup the app in your laptop device:
 
+1. Clone the project repository locally using your terminal, preferably "Git Bah".
+```sh
+git clone https://github.com/Eelaf-Adam/submission_reminder_app_Eelaf-Adam.git
+```
+
+2. Navigate to the project directory 
+```sh
+cd submission_reminder_app_Eelaf-Adam
+```
+
+3. Run the setup script 
+```sh
+./create_environment.sh
+```
+
+4. Run the copilot
+```sh
+./copilot_shell_script.sh
+```
 
